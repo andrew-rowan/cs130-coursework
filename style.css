@@ -1,21 +1,81 @@
 /* You're welcome to change any of this! */
 * {
     box-sizing: border-box;
+    
+
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
     margin: 0px;
-    font-family: Arial, sans-serif;
+    /*font-family: Arial, sans-serif; */
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #0a6cad
 }
-header, section {
-    padding: 20px;
+
+header{
+    margin-right: auto;
+    margin-left:auto;
+    padding: 40px 0px 0px 0px ;
+    text-align: center;
+    font-size: 200%;
+    color: white;
+    
+}
+
+section {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 40px;
+    color: white
 }
 p, li {
     line-height: 1.5em;
+}
+
+.boxed {
+    border: 1px solid white ;
+    padding: 10px;
+    width: fit-content;
+    box-shadow: 8px 8px 0px 0px #FA7739;
+}
+
+.inspiration_boxed{
+    background-color: #F0F0F0;
+    padding: 10px;
+    width: fit-content;
+    color: #0a6cad;
+    border: 1px solid #0a6cad;
+    box-shadow: 8px 8px 0px 0px #0a6cad;
+}
+
+#tutorials_homework {
+    /* box-shadow: 0 8px 10px -2px white; */
+    padding: 20px;
+    margin: 30px auto;
+    color: #fff;
+    margin-right: auto;
+    margin-left: auto;    
+}
+
+a:link{
+    color: white;
 }
 
 #inspiration {
     background-color: #F0F0F0;
     padding-top: 40px;
     padding-bottom: 40px;
+    color: #0a6cad;
+}
+
+.inspiration2 {
+    background-color: #F0F0F0;
+    padding-left: 50px;
+    color: #0a6cad;
+}
+
+.inspiration2 a:link{
+    color: #0a6cad;
 }
