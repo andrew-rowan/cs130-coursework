@@ -71,6 +71,18 @@ body {
 
 
 @media (max-width: 1020px) {
+  .task-3.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr 6fr 1fr;
+    grid-template-areas: 
+      "header header" 
+      "sidebar nav"
+      "sidebar main"
+      "ads footer";
+  }
+  
 }
 
 
