@@ -15,7 +15,7 @@ body {
   color: #333;
   background-color: snow;
   margin: 0 auto;
-  max-width: 1000px;
+  /* max-width: 1000px; */
 }
 
 .item {
@@ -33,24 +33,39 @@ body {
 /* Task 3 */
 
 .task-3.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 6fr 1fr;
+  grid-template-areas: 
+    "header header header" 
+    "sidebar nav ads"
+    "sidebar main ads"
+    "footer footer footer";
 }
 
 .task-3 .header {
+  grid-area: header; 
 }
 
 .task-3 .navigation {
+  grid-area: nav;
 }
 
 .task-3 .ads {
+  grid-area: ads;
 }
 
 .task-3 .sidebar {
+  grid-area: sidebar;
 }
 
 .task-3 .main {
+  grid-area: main;
 }
 
 .task-3 .footer {
+  grid-area: footer;
 }
 
 
