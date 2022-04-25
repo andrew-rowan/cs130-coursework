@@ -29,6 +29,7 @@ body {
        "bottom bottom";
     height: 100vh;
 }
+
 aside {
     background-color: #000;
     grid-area: left;
@@ -118,6 +119,11 @@ header a{
     position: relative
 }
 
+.selected {
+    justify-content: center;
+    border-bottom: solid #1DB954 3px;
+}
+
 nav{
     flex-direction: row;
     justify-content: left;
@@ -135,10 +141,14 @@ nav a{
 
 /* Your Code Here */
 
-section{
+#featured-content{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    
+}
+
+section{
     background: #222222;
     padding-top: 20px;
     padding-bottom: 30px;
@@ -146,16 +156,29 @@ section{
     margin: 20px;
     width: 20%;
     justify-content: center;
-
-
+    text-align: center;
 }
 
 section img{
-    width: 20%;
+    width: 75%;
     border-radius: 50%;
 }
 
 
+
+.play-button {
+    float: right;
+    visibility: hidden;
+}
+
+.artist-card:hover .play-button{
+    visibility: visible;
+}
+
+.play-button > i {
+    background-color: #1cb954;
+    border-radius: 50%;
+}
 
 
 /**************************/
@@ -163,28 +186,16 @@ section img{
 /**************************/
 
 @media only screen and (max-width: 1000px) {
-    main{
+    article {
+        display:flex;
         flex-wrap: wrap;
+        flex-direction: column;
     }
+    section {
+        width: calc(33% - 20px);
+        
+    }
+}
 
-    .artist-card section {
-       width: 50%;
-    }
-    .artist-card section div {
-       margin: 20px 0px 0px 20px;
-    }
- }
- 
- @media only screen and (max-width: 600px) {
-    main{
-        flex-wrap: wrap;
-    }
 
-    .artist-card section {
-       width: 100%;
-    }
-    .artist-card section div {
-       margin: 10px 0px 0px 10px;
-    }
- }
- 
+
