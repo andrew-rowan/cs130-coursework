@@ -1,24 +1,24 @@
 body {
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
     color: #fff;
-}
-a, a:hover, a:visited, a:active { 
+ }
+ a, a:hover, a:visited, a:active {
     color: #fff;
     text-decoration: none;
-}
-
-* {
+ }
+  
+ * {
     box-sizing: border-box;
-}
-
-/**********/
-/* Layout */
-/**********/
-aside, footer, header, nav, section, article {
+ }
+  
+ /**********/
+ /* Layout */
+ /**********/
+ aside, footer, header, nav, section, article {
     display: flex;
     flex-direction: column;
-}
-body {
+ }
+ body {
     overflow: hidden;
     margin: 0px;
     display: grid;
@@ -28,87 +28,87 @@ body {
        "left main"
        "bottom bottom";
     height: 100vh;
-}
-
-aside {
+ }
+  
+ aside {
     background-color: #000;
     grid-area: left;
-}
-header {
+ }
+ header {
     background: #111;
     position: fixed;
     width: calc(100vw - 250px);
     left: 250px;
-}
-
-main {
+ }
+  
+ main {
     background: #111;
     grid-area: main;
     min-height: calc(350px);
     max-height: calc(100vh - 100px);
     overflow-y: auto;
     z-index: 3;
-}
-
-nav {
+ }
+  
+ nav {
     margin-top: 100px;
-}
-
-footer {
+ }
+  
+ footer {
     background: #222;
     grid-area: bottom;
-}
-
-
-/***************************/
-/* Accessories & Florishes */
-/***************************/
-::-webkit-scrollbar {
+ }
+  
+  
+ /***************************/
+ /* Accessories & Florishes */
+ /***************************/
+ ::-webkit-scrollbar {
     width: 16px;
-}
-
-::-webkit-scrollbar-thumb {
+ }
+  
+ ::-webkit-scrollbar-thumb {
     border: 4px solid transparent;
     border-radius: 16px;
     background-clip: padding-box;
     min-height: 30px;
-}
-::-webkit-scrollbar-thumb {
+ }
+ ::-webkit-scrollbar-thumb {
     background-color: hsla(0,0%,100%,.3);
-}
-
-/***************************/
-/* Part A: Left Navigation */
-/***************************/
-
-aside {
+ }
+  
+ /***************************/
+ /* Part A: Left Navigation */
+ /***************************/
+  
+ aside {
     padding: 30px;
-}
-
-aside, a, i {
+ }
+  
+ aside, a, i {
     padding-right: 12px;
     padding-bottom: 10px;
     color: #c7c7c7;
-}
-
-i.fab fa-spotify {
+ }
+  
+ i.fab fa-spotify {
     color: yellow;
-} /* ?? how do i change the spotify logo only for padding and color? */
-
-
-/********************************/
-/* Part B: Header & Nav Styling */
-/********************************/
-
-/* Your Code Here */
-
-header{
+ } /* ?? how do i change the spotify logo only for padding and color? */
+  
+  
+ /********************************/
+ /* Part B: Header & Nav Styling */
+ /********************************/
+  
+ /* Your Code Here */
+  
+ header{
     flex-direction: row;
     justify-content: right;
     padding: 20px;
-}
-
-header a{
+ }
+  
+ header a{
     border: solid 2px #fff;
     border-radius: 30px;
     padding: 10px;
@@ -116,76 +116,95 @@ header a{
     padding-left: 40px;
     justify-content: center;
     margin: 15px;
-    position: relative
-}
-
-.selected {
+    position: relative;
+    text-transform: uppercase;
+ }
+  
+ a.selected {
     justify-content: center;
     border-bottom: solid #1DB954 3px;
-}
-
-nav{
+ }
+ /* ?? how do i select just in aside or just in header to change underline location */
+  
+ nav{
     flex-direction: row;
     justify-content: left;
     padding: 20px;
-}
-
-nav a{
+ }
+  
+ nav a{
     margin-right: 15px;
-}
-
-
-/*************************/
-/* Part C: Artists Panel */
-/*************************/
-
-/* Your Code Here */
-
-#featured-content{
+    text-transform: uppercase;
+ }
+  
+  
+ /*************************/
+ /* Part C: Artists Panel */
+ /*************************/
+  
+ /* Your Code Here */
+  
+ #featured-content{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
-}
-
-section{
+    justify-content: center;
+   
+ }
+  
+ .artist-card{
     background: #222222;
     padding-top: 20px;
-    padding-bottom: 30px;
     border-radius: 20px;
     margin: 20px;
     width: 20%;
-    justify-content: center;
-    text-align: center;
-}
-
-section img{
-    width: 75%;
+ }
+  
+  
+  
+ section img{
     border-radius: 50%;
-}
-
-
-
-.play-button {
+    width: 75%;
+    float: center;
+ }
+ /* why can't i get this centered */
+  
+ /* how do i get the text of the arists without the margin */
+  
+  
+ .play-button {
     float: right;
     visibility: hidden;
-}
-
-.artist-card:hover .play-button{
+ }
+  
+ .artist-card:hover .play-button{
     visibility: visible;
-}
-
-.play-button > i {
+ }
+  
+ button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+  
+ .play-button {
+    float: right;
     background-color: #1cb954;
     border-radius: 50%;
-}
-
-
-/**************************/
-/* Part D: Responsive UIs */
-/**************************/
-
-@media only screen and (max-width: 1000px) {
+  
+ }
+  
+ .fa-play {
+    color: white;
+  
+ }
+  
+  
+ /**************************/
+ /* Part D: Responsive UIs */
+ /**************************/
+  
+ @media only screen and (max-width: 1000px) {
     article {
         display:flex;
         flex-wrap: wrap;
@@ -193,9 +212,30 @@ section img{
     }
     section {
         width: calc(33% - 20px);
-        
+       
     }
-}
-
-
-
+ }
+  
+ @media only screen and (max-width: 600px) {
+    article {
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+    }
+    section {
+        width: 20%;
+       
+    }
+  
+    aside {
+        display: none;
+    }
+ }
+  
+ /* What is happening here?? */
+  
+  
+  
+ 
+ 
