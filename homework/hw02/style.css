@@ -95,6 +95,16 @@ body {
     color: yellow;
  } /* ?? how do i change the spotify logo only for padding and color? */
   
+ a.selected-sidebar {
+   justify-content: center;
+   border-left: solid #1DB954 3px;
+   padding:10px;
+}
+
+aside a{
+   border-left: solid transparent 3px;
+   padding:10px;
+}
   
  /********************************/
  /* Part B: Header & Nav Styling */
@@ -106,6 +116,7 @@ body {
     flex-direction: row;
     justify-content: right;
     padding: 20px;
+    /* background-color: hotpink; */
  }
   
  header a{
@@ -124,6 +135,8 @@ body {
     justify-content: center;
     border-bottom: solid #1DB954 3px;
  }
+
+
  /* ?? how do i select just in aside or just in header to change underline location */
   
  nav{
@@ -135,6 +148,10 @@ body {
  nav a{
     margin-right: 15px;
     text-transform: uppercase;
+ }
+
+ #profile{
+    background-color: #222222;
  }
   
   
@@ -156,21 +173,36 @@ body {
     background: #222222;
     padding-top: 20px;
     border-radius: 20px;
-    margin: 20px;
-    width: 20%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 15%;
+    height: 300px;
  }
-  
-  
+
+ 
+
+ /* .card-footer{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+ } */
+
+
   
  section img{
     border-radius: 50%;
     width: 75%;
-    float: center;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
  }
- /* why can't i get this centered */
   
  /* how do i get the text of the arists without the margin */
   
+
   
  .play-button {
     float: right;
@@ -181,21 +213,24 @@ body {
     visibility: visible;
  }
   
- button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
   
  .play-button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0px;
     float: right;
     background-color: #1cb954;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
   
  }
   
  .fa-play {
     color: white;
+    margin: 0px;
+    padding: 0px;
   
  }
   
@@ -211,7 +246,7 @@ body {
         flex-direction: column;
     }
     section {
-        width: calc(33% - 20px);
+        width: 20%;
        
     }
  }
@@ -223,14 +258,28 @@ body {
         flex-direction: column;
         width: 100%;
     }
-    section {
-        width: 20%;
-       
+    .artist-card {
+        width: 40%;
+    }
+
+
+    aside {
+      display: none;
+  }
+
+    body{
+       grid-template-columns: 100%;
+       grid-template-areas:
+       "main"
+       "bottom";
+    }
+
+    header{
+       left: 0px;
+       width: 100%;
     }
   
-    aside {
-        display: none;
-    }
+
  }
   
  /* What is happening here?? */
