@@ -1,15 +1,23 @@
+let currentsize = 1.4
+
 const makeBigger = () => {
    console.log('make bigger!');
-   document.querySelector(".content").style.fontSize = "40px";
-   document.querySelector("h1").style.fontSize = "70px";
+   currentsize += 0.2
+   document.querySelector("div.content").style.fontSize = `${currentsize}em`;
+   document.querySelector("header").style.fontSize = `${currentsize+0.5}em`;
+
+   // document.querySelector("div.content").style.fontSize = "40px";
+   // document.querySelector("h1").style.fontSize = "70px";
 
 
 };
 
 const makeSmaller = () => {
    console.log('make smaller!');
-   document.querySelector(".content").style.fontSize = "10px";
-   document.querySelector("h1").style.fontSize = "15px";
+   currentsize -= 0.2
+   document.querySelector("div.content").style.fontSize = `${currentsize}em`;
+   document.querySelector("header").style.fontSize = `${currentsize+0.5}em`;
+
 
 
 };
