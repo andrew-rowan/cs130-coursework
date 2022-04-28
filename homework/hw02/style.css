@@ -2,10 +2,7 @@ body {
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
     color: #fff;
  }
- a, a:hover, a:visited, a:active {
-    color: #fff;
-    text-decoration: none;
- }
+
   
  * {
     box-sizing: border-box;
@@ -85,11 +82,11 @@ body {
     padding: 30px;
  }
   
- aside, a, i {
+ /* aside, a {
     padding-right: 12px;
     padding-bottom: 10px;
     color: #c7c7c7;
- }
+ } */
   
  i.fab fa-spotify {
     color: yellow;
@@ -104,6 +101,11 @@ body {
 aside a{
    border-left: solid transparent 3px;
    padding:10px;
+   color: #c7c7c7;
+}
+
+aside i{
+   margin-right: 15px;
 }
   
  /********************************/
@@ -116,15 +118,10 @@ aside a{
     flex-direction: row;
     justify-content: right;
     padding: 20px;
-    /* background-color: hotpink; */
+   /* background-color: hotpink; */
  }
   
  header a{
-    border: solid 2px #fff;
-    border-radius: 30px;
-    padding: 10px;
-    padding-right: 40px;
-    padding-left: 40px;
     justify-content: center;
     margin: 15px;
     position: relative;
@@ -134,10 +131,9 @@ aside a{
  a.selected {
     justify-content: center;
     border-bottom: solid #1DB954 3px;
+    padding-left: 12px;
  }
 
-
- /* ?? how do i select just in aside or just in header to change underline location */
   
  nav{
     flex-direction: row;
@@ -152,7 +148,21 @@ aside a{
 
  #profile{
     background-color: #222222;
+    border: solid 2px transparent;
+    border-radius: 30px;
+    padding: 6px;
+    padding-right: 40px;
+    padding-left: 40px;
  }
+
+ #upgrade{
+   background-color: #111;
+   border: solid 1px #fff;
+   border-radius: 30px;
+   padding: 10px;
+   padding-right: 40px;
+   padding-left: 40px;
+}
   
   
  /*************************/
@@ -173,12 +183,30 @@ aside a{
     background: #222222;
     padding-top: 20px;
     border-radius: 20px;
-    margin-top: 10px;
+    /* margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 15px;
-    margin-left: 15px;
+    margin-left: 15px; */
+    margin: 15px;
     width: 15%;
-    height: 300px;
+    height: 275px;
+ }
+
+ .artist-card h2{
+   font-size: 15px;
+   padding-left: 10px;
+   padding-bottom: 0px;
+   padding-top: 10px;
+   margin: 0px;
+    
+ }
+
+ .artist-card p{
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 3px;
+    margin: 0px;
+
  }
 
  
@@ -207,10 +235,6 @@ aside a{
  .play-button {
     float: right;
     visibility: hidden;
- }
-  
- .artist-card:hover .play-button{
-    visibility: visible;
  }
   
   
@@ -282,9 +306,30 @@ aside a{
 
  }
   
- /* What is happening here?? */
   
+    
+ /**************************/
+ /* Extra Credit: Hover Effects */
+ /**************************/
   
-  
+a, a:hover {
+   color: white;
+   text-decoration: none;
+}
+
+#profile:hover {
+   border: solid 1px #fff;
+}
+
+#upgrade:hover {
+   background-color: rgba(90, 90, 90, 0.133);
+   border: solid 2px #fff;
+} 
  
- 
+.artist-card:hover .play-button{
+   visibility: visible;
+}
+
+nav a:hover{
+   border-bottom: solid #1DB954 3px;
+}
