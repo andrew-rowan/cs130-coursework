@@ -1,9 +1,9 @@
 const tracks = [
     {
-      "id": "3AhXZa8sUQht0UEdBJgpGc",
-      "name": "Like a Rolling Stone",
-      "preview_url": "https://p.scdn.co/mp3-preview/f0eec1a1dbd31bf51cf323d2981535ec4fc5a568?cid=9697a3a271d24deea38f8b7fbfa0e13c",
-      "image_url": "https://i.scdn.co/image/ab67616d0000b273540a241e3001ddc276b9ab93"
+      "id": "1fgvJXlcZ7uIddMpqsqw0L",
+      "name": "Love Don't Cost a Thing",
+      "preview_url": "https://p.scdn.co/mp3-preview/148c116af19ac8bf13b27752a2ffb5e9caec4ab2?cid=9697a3a271d24deea38f8b7fbfa0e13c",
+      "image_url": "https://i.scdn.co/image/ab67616d0000b273bfa0a1de59696c7a6fe15ebb"
     },
     {
       "id": "6HSXNV0b4M4cLJ7ljgVVeh",
@@ -90,13 +90,16 @@ const tracks = [
 // This code adds a card for the 1st track in the list (above)
 // How would you use a loop so that a card is generated for every 
 // track in the list?
-const track = tracks[4];
-const template = `
-    <div data-index="0" onclick="playSong(event);">
-        <img src="${track.image_url}" />
-        <h2>${track.name}</h2>
-    </div>`;
-document.querySelector('main').innerHTML += template;
+
+for (let i = 0; i < tracks.length; i++) {
+  const track = tracks[i];
+  const template = `
+      <div data-index="${i}" onclick="playSong(event);">
+          <img src="${track.image_url}" />
+          <h2>${track.name}</h2>
+      </div>`;
+  document.querySelector('main').innerHTML += template;
+}
 
 
 // Part 2: 
@@ -106,8 +109,15 @@ document.querySelector('main').innerHTML += template;
 // #audio-source element's "src" attribute with the correct 
 // sound sample and then invoke the audio.load() and audio.play() 
 // logic.
+
+
 const playSong = (ev) => {
-    const audio = document.querySelector('audio');
+
+    const index = ev.currentTarget.dataset.index;
+    console.log(index);
+    const track = tracks[index].preview_url;
+    document.querySelector('#audio-source').src = track;
+    const audio = document.querySelector("audio");
     audio.load();
     audio.play();
 }
