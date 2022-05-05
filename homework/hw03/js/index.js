@@ -8,7 +8,13 @@
  * element so that when the ".image" element is clicked, the corresponding 
  * image loads in the .featured image element.
  * 
+ * 
+ * 2. Create event handlers for the next and previous buttons. The next button should
+ *    show the next image in the thumbnail list. The previous should show the previous.
+ * 3. If you get to the end, start at the beginning.  
+ * 4. If you get to the beginning, loop around to the end.
  */
+
 
 
 let currentIndex = 0;
@@ -17,8 +23,8 @@ let currentIndex = 0;
      // whatever I click, define element
     const elem = ev.currentTarget;
     // logging 
-    console.log(elem.style.backgroundImage);
-    console.log(ev.currentTarget);
+    // console.log(elem.style.backgroundImage);
+    // console.log(ev.currentTarget);
     // set the featured image CLASS of the style background image to the earlier element
     currentIndex = parseInt(elem.dataset.index);
     // console.log("currentIndex:", currentIndex);
@@ -27,33 +33,36 @@ let currentIndex = 0;
  };
 
 
-/** 
- * 2. Create event handlers for the next and previous buttons. The next button should
- *    show the next image in the thumbnail list. The previous should show the previous.
- * 
- * 3. If you get to the end, start at the beginning. 
- * 
- * 4. If you get to the beginning, loop around to the end.
- * 
- * 
- */
-
  const showNext = (ev) => {
+    if (currentIndex == 7){
+        currentIndex = -1
+    };
     currentIndex += 1;
     console.log("currentIndex:", currentIndex);
     // update .featured_image
     // elem = ev.currentTarget.data-index.currentIndex;
     // console.log(elem.style.backgroundImage);
-    const elem = ev.currentTarget.dataset;
-    document.querySelector('.featured_image').style.backgroundImage = elem.style.backgroundImage;
+    displayBackground();
+    
+};
+
+const showPrev = (ev) => {
+    if (currentIndex == 0){
+        currentIndex = 8
+    };
+    currentIndex -= 1;
+    console.log("currentIndex:", currentIndex);
+    displayBackground();
+    // update .featured_image
 };
 
 
 
 
-
-
-
+const displayBackground = () => {
+    const elem = images[currentIndex];
+    document.querySelector('.featured_image').style.backgroundImage = `url('${elem}')`;
+};
 
 
 
@@ -105,5 +114,5 @@ for (const elem of imageElements) {
 }
 
 document.querySelector('.next').onclick = showNext;
-// document.querySelector('.prev').onclick = showPrev;
+document.querySelector('.prev').onclick = showPrev;
 document.querySelector('.featured_image').onclick = showNext;

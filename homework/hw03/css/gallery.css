@@ -14,7 +14,7 @@ main {
     grid-template-areas:
       "top"
       "bottom";
-    height: 100vh;
+    height: 98vh;
     width: 100vw;
 }
 #featured {
@@ -90,8 +90,18 @@ main {
     right: 2vw;
 }
 
-
-
+/* andrew added this footer */
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(206, 206, 206);
+    height: auto;
+    width: 100vw;
+    padding: 1px;
+    color: #fff;
+}
 
 /* Media Queries */
 @media (max-width: 800px) {
