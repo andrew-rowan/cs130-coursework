@@ -27,11 +27,15 @@ const getTracks = (term) => {
             .then((data) => data.json())
             .then((data) => {
                 // console.log("tracks:", data);
+                if (data.length > 0){
                 const firstFive = data.splice(0, 5)
                 for (const artistData of firstFive){
                     console.log(artistData);
                     elem.innerHTML += getTrackHTML(artistData);
                 }
+            } else {
+                elem.innerHTML = "No songs found."
+            }
 
             });
     
@@ -70,10 +74,15 @@ const getAlbums = (term) => {
             .then((data) => data.json())
             .then((data) => {
                 console.log("album:", data);
-                for (const albumData of data){
-                    console.log(albumData);
-                    elem.innerHTML += getAlbumHTML(albumData);
+                if (data.length > 0 ) {
+                    for (const albumData of data){
+                        console.log(albumData);
+                        elem.innerHTML += getAlbumHTML(albumData);
+                    }
+                } else {
+                    elem.innerHTML = "No albums found."
                 }
+
 
             });
             
@@ -125,6 +134,8 @@ const getArtist = (term) => {
                 const firstArtist = data[0];
                 console.log(firstArtist);
                 elem.innerHTML += getArtistHTML(firstArtist);
+            } else {
+                elem.innerHTML = "No artist found."
             }
         });
 
