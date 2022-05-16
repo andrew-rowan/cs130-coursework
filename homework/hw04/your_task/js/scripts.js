@@ -44,7 +44,7 @@ const getTracks = (term) => {
 
 const getTrackHTML = (data) => {
     return `<button class="track-item preview" data-preview-track=${data.preview_url} onclick="handleTrackClick(event);">
-    <img src=${data.album.image_url}>
+    <img src=${data.album.image_url} alt="${data.name} track cover>
     <i class="fas play-track fa-play" aria-hidden="true"></i>
     <div class="label">
         <h2>${data.name}</h2>
@@ -92,7 +92,7 @@ const getAlbums = (term) => {
 const getAlbumHTML = (data) => {
     return `<section class="album-card" id=${data.id}>
     <div>
-        <img src=${data.image_url}>
+        <img src=${data.image_url} alt="${data.name} image cover>
         <h2>${data.name}</h2>
         <div class="footer">
             <a href=${data.spotify_url} target="_blank">
@@ -145,7 +145,7 @@ const getArtist = (term) => {
 const getArtistHTML = (data) => {
     return `<section class="artist-card" id="${data.id}">
     <div>
-        <img src="${data.image_url}">
+        <img src="${data.image_url}" alt="Artist image from Spotify">
         <h2>${data.name}</h2>
         <div class="footer">
             <a href="${data.spotify_url}" target="_blank">
@@ -159,7 +159,21 @@ const getArtistHTML = (data) => {
 const handleTrackClick = (ev) => {
     const previewUrl = ev.currentTarget.getAttribute('data-preview-track');
     console.log(previewUrl);
+    document.querySelector('#track').src = previewUrl;
+    audioPlayer.play();
 }
+
+// FROM TUTORIAL 6 -- used for reference. 
+// const playSong = (ev) => {
+
+//     const index = ev.currentTarget.dataset.index;
+//     console.log(index);
+//     const track = tracks[index].preview_url;
+//     document.querySelector('#audio-source').src = track;
+//     const audio = document.querySelector("audio");
+//     audio.load();
+//     audio.play();
+// }
 
 document.querySelector('#search').onkeyup = (ev) => {
     // Number 13 is the "Enter" key on the keyboard
