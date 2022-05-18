@@ -160,20 +160,20 @@ const handleTrackClick = (ev) => {
     const previewUrl = ev.currentTarget.getAttribute('data-preview-track');
     console.log(previewUrl);
     document.querySelector('#track').src = previewUrl;
-    audioPlayer.play();
-}
+    audioPlayer.togglePlay();
+    console.log("did this work");
+    // audioPlayer.play();
+    // if (audio.paused) {
+    //     this.play();
+    //     audioPlayer.play();
+    // } else {
+    //     this.pause();
+    //     console.log("pause");
+    //     audioPlayer.pause();
+    show_player();
+    
+};
 
-// FROM TUTORIAL 6 -- used for reference. 
-// const playSong = (ev) => {
-
-//     const index = ev.currentTarget.dataset.index;
-//     console.log(index);
-//     const track = tracks[index].preview_url;
-//     document.querySelector('#audio-source').src = track;
-//     const audio = document.querySelector("audio");
-//     audio.load();
-//     audio.play();
-// }
 
 document.querySelector('#search').onkeyup = (ev) => {
     // Number 13 is the "Enter" key on the keyboard
@@ -183,3 +183,8 @@ document.querySelector('#search').onkeyup = (ev) => {
         search();
     }
 };
+
+function show_player() {
+    var PlayerVisible = document.getElementById("player");
+    PlayerVisible.style.display = "block";  // <-- Set it to block
+}
