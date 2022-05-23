@@ -17,7 +17,6 @@ const AudioPlayer = (selector, audioFile) => {
     this.togglePlay = () => {
         if (audio.paused) {
             this.play();
-            audio.paused = F;
         } else {
             this.pause();
             console.log("pause!");

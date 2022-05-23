@@ -160,8 +160,12 @@ const handleTrackClick = (ev) => {
     const previewUrl = ev.currentTarget.getAttribute('data-preview-track');
     console.log(previewUrl);
     document.querySelector('#track').src = previewUrl;
+    // why is this not working? 
     audioPlayer.togglePlay();
+    openPlayer();
     console.log("did this work");
+    
+
     // audioPlayer.play();
     // if (audio.paused) {
     //     this.play();
@@ -170,7 +174,8 @@ const handleTrackClick = (ev) => {
     //     this.pause();
     //     console.log("pause");
     //     audioPlayer.pause();
-    show_player();
+    // ??
+    show_player(); 
     
 };
 
@@ -187,4 +192,8 @@ document.querySelector('#search').onkeyup = (ev) => {
 function show_player() {
     var PlayerVisible = document.getElementById("player");
     PlayerVisible.style.display = "block";  // <-- Set it to block
+}
+
+function openPlayer(e){
+	document.getElementById('player').style.display = 'block';
 }
