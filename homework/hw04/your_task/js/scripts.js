@@ -160,10 +160,12 @@ const handleTrackClick = (ev) => {
     const previewUrl = ev.currentTarget.getAttribute('data-preview-track');
     console.log(previewUrl);
     document.querySelector('#track').src = previewUrl;
-    // why is this not working? 
+    // why is this not working? ?
     audioPlayer.togglePlay();
     openPlayer();
     console.log("did this work");
+    elem.innerHTML += updateTrack();
+    
     
 
     // audioPlayer.play();
@@ -177,6 +179,22 @@ const handleTrackClick = (ev) => {
     // ??
     show_player(); 
     
+};
+
+
+
+// ?? Fix this why won't it work. 
+const updateTrack = (data) => {
+    console.log("update the track");
+    return `<section class="track-item">
+    <div>
+        <img src=${data.album.image_url} alt=${data.name}>
+        <i class="fas play-track fa-pause" aria-hidden="true"></i>
+        <div class="label"></div>
+        <h2>>${data.name}</h2>
+        <p>${data.artist.name}</p>
+    </div>
+    </section>`
 };
 
 
