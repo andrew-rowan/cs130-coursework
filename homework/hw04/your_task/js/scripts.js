@@ -163,8 +163,11 @@ const handleTrackClick = (ev) => {
     // why is this not working? ?
     audioPlayer.togglePlay();
     openPlayer();
-    console.log("did this work");
-    elem.innerHTML += updateTrack();
+    document.querySelector('footer .track-item').innerHTML = ev.currentTarget.innerHTML;
+    // console.log("did this work");
+    // const elem = document.querySelector("#current-track");
+    // elem.innerHTML = "";
+    // elem.innerHTML += updateTrack(data);
     
     
 
@@ -176,9 +179,7 @@ const handleTrackClick = (ev) => {
     //     this.pause();
     //     console.log("pause");
     //     audioPlayer.pause();
-    // ??
-    show_player(); 
-    
+    // ??    
 };
 
 
@@ -186,7 +187,7 @@ const handleTrackClick = (ev) => {
 // ?? Fix this why won't it work. 
 const updateTrack = (data) => {
     console.log("update the track");
-    return `<section class="track-item">
+    document.getElementById('current-track').innerHTML = `<section class="track-item">
     <div>
         <img src=${data.album.image_url} alt=${data.name}>
         <i class="fas play-track fa-pause" aria-hidden="true"></i>
@@ -207,11 +208,12 @@ document.querySelector('#search').onkeyup = (ev) => {
     }
 };
 
-function show_player() {
-    var PlayerVisible = document.getElementById("player");
-    PlayerVisible.style.display = "block";  // <-- Set it to block
-}
+// function show_player() {
+//     var PlayerVisible = document.getElementById("player");
+//     PlayerVisible.style.display = "block";  // <-- Set it to block
+// }
 
 function openPlayer(e){
-	document.getElementById('player').style.display = 'block';
+    document.querySelector('footer').style.display = 'flex';
+	// document.getElementById('player').style.display = 'block';
 }
